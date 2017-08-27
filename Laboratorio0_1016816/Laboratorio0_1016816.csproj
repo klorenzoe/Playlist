@@ -155,12 +155,12 @@
     </Compile>
     <Compile Include="Models\SongModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tools\Music media player.aspx.cs">
-      <DependentUpon>Music media player.aspx</DependentUpon>
+    <Compile Include="Tools\MessageBox.aspx.cs">
+      <DependentUpon>MessageBox.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Tools\Music media player.aspx.designer.cs">
-      <DependentUpon>Music media player.aspx</DependentUpon>
+    <Compile Include="Tools\MessageBox.aspx.designer.cs">
+      <DependentUpon>MessageBox.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tools\Singleton.cs" />
   </ItemGroup>
@@ -187,7 +187,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Tools\Music media player.aspx" />
+    <Content Include="Tools\MessageBox.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -205,6 +205,8 @@
     <Content Include="Views\Song\Index.cshtml" />
     <Content Include="Views\Song\Create.cshtml" />
     <Content Include="Views\Song\Edit.cshtml" />
+    <Content Include="Views\Song\Details.cshtml" />
+    <Content Include="Views\Song\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
