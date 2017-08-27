@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Laboratorio0_1016816.Models.SongModel>
+
+@{
+    ViewBag.Title = "GoPlaylist";
+}
+
+<h2>My Playlist</h2>
+
+<p>
+    @Html.ActionLink("Back", "Back") 
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.singer)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.duration)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.singer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.duration)
+        </td>
+        <td>
+            @Html.ActionLink("Play", "PlayPlaylist", new { id = item.name }) |
+            @Html.ActionLink("Details", "Details", new { id=item.name }) |
+            @Html.ActionLink("Delete of playlist", "SpecialDelete", new { id=item.name })
+        </td>
+    </tr>
+}
+
+</table>
+
+@using (Html.BeginForm("PausePlaylist", "Song", FormMethod.Get))
+{
+    <button type="submit" class="btn btn-default">▌▌</button>
+    <br /><br />
+}
+@using (Html.BeginForm("RePlayPlaylist", "Song", FormMethod.Get))
+{
+    <button type="submit" class="btn btn-default">▶</button>
+    <br /><br />
+}
+@using (Html.BeginForm("Next", "Song", FormMethod.Get))
+{
+    <button type="submit" class="btn btn-default">▷▶</button>
+    <br /><br />
+}
+@using (Html.BeginForm("Previous", "Song", FormMethod.Get))
+{
+    <button type="submit" class="btn btn-default">◄◁</button>
+    <br /><br />
+}
+
+<p>
+    @Html.ActionLink("Sort ascending names", "AscendingNames")|
+    @Html.ActionLink("Sort descending names", "DescendingNames")
+</p>
+<p>
+    @Html.ActionLink("Sort ascending duration", "AscendingDuration")|
+    @Html.ActionLink("Sort descending duration", "DescendingDuration")
+</p>

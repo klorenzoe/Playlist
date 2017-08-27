@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Laboratorio0_1016816.Models.SongModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2><FONT FACE="Courier Normal" SIZE=7 COLOR="black">Songs media player ♪♫♪</FONT></h2>
+
+@using (Html.BeginForm("SaveSong", "Song", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <small>Nota: la plataforma solo soporta canciones de menos de 3MB. Por la misma razón solo se pueden subir de dos a tres canciones a la vez.</small>
+    <input type="file" name="file" multiple/>
+    <br />
+    <button type="submit" class="btn btn-default">Upload the Songs</button>
+    <br /><br />
+}
+@using (Html.BeginForm("Search", "Song", FormMethod.Get))
+{
+    <button type="submit" class="btn btn-default">Search Song</button>
+    <br /><br />
+}
+@using (Html.BeginForm("InitialGoPlaylist", "Song", FormMethod.Get))
+{
+    <button type="submit" class="btn btn-default" style="font:italic">Go to Playlist</button>
+    <br /><br />
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.duration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.singer)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(model => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.duration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.singer)
+        </td>
+        <td>
+            @Html.ActionLink("Play", "Play", new { id = item.name }) |
+            @Html.ActionLink("Add to playlist", "AddToSpecialPlaylist", new { id = item.name }) |
+            @Html.ActionLink("Edit", "Edit", new { id = item.name}) |
+            @Html.ActionLink("Details", "Details", new { id = item.name }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.name })
+        </td>
+    </tr>
+}
+
+</table>
+@using (Html.BeginForm("Pause", "Song", FormMethod.Get))
+{
+    <button type="submit" class="btn btn-default">▌▌</button>
+    <br /><br />
+}
+@using (Html.BeginForm("RePlay", "Song", FormMethod.Get))
+{
+    <button type="submit" class="btn btn-default">▶</button>
+    <br /><br />
+}
