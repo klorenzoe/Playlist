@@ -9,7 +9,7 @@ Acerca del proyecto
   
 Acerca de su uso  
 >Es necesario saber que solo acepta canciones menores a 3MB, de lo contrario generará error.  
->Solo se pueden subir de 2 a 3 canciones a la vez. (en el examinar, no así el la lista).  
+>Solo se pueden subir de 2 a 3 canciones a la vez. (en el examinar, no así en la lista).  
 >Si se borra una canción de la lista original, se borra de la playlist, no así visceversa.  
 >Solo en la playlist se puede reproducir la canción siguiente o la anterior ya que se trabajó con una lista.  
 Los indices facilitan este proceso.  
